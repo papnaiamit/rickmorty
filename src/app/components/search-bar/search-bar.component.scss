@@ -1,0 +1,46 @@
+.search-bar {
+    padding: 15px 0;
+    .left-section {
+        float: left;
+        position: relative;
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 300px;
+        }
+        
+        button {
+            background: #e39426;
+            color: #fff;
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .right-section {
+        float: right;
+        @media (max-width:767px) {
+            margin-top: 15px;
+        }
+        select {
+            width: 200px;
+            @media (max-width:767px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .right-section {
+        select {
+            width: 100%;
+        }
+    }
+}

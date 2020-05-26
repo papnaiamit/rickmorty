@@ -1,0 +1,15 @@
+<div class="clearfix search-bar">
+    <div class="left-section">
+        <label>Search by Name</label>
+        <input type="text" placeholder="Enter here" #searchText>
+        <button type="button" (click)="searchCharacter(searchText.value)">Search</button>
+    </div>
+    
+    <div class="right-section">
+        <select #optionValue (change)="getSortValue(optionValue.value)">
+            <option value="Sort by Id">Sort by Id</option>
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+        </select>
+    </div>
+</div>
