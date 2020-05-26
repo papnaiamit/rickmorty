@@ -1,0 +1,18 @@
+.sidebar {
+    float: left;
+    width: 250px;
+}
+
+.wrap-right {
+    float: right;
+    width: calc(100% - 280px);  
+}
+
+@media (max-width:767px) {
+    .sidebar {
+        width: 100%;
+    }
+    .wrap-right {
+        width: 100%;
+    }
+}
