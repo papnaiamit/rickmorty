@@ -1,0 +1,16 @@
+<div class="box" *ngIf="characterDetails">
+    <div class="img-wrap">
+        <img src="{{characterDetails?.image}}" alt="{{characterDetails?.name}}">
+        <div class="img-caption">
+            <h4>{{characterDetails?.name}} </h4>
+            <small>id: {{characterDetails?.id}} - created {{characterDetails?.created | date: 'dd/MM/yyyy'}}</small>
+        </div>
+    </div>
+    <div class="character-details">
+        <p>Status  <span> {{characterDetails?.status }}</span></p>
+        <p>Species  <span> {{characterDetails?.species}} </span></p>
+        <p>Gender  <span> {{characterDetails?.gender}}  </span></p>
+        <p>Origin  <span> {{characterDetails?.origin?.name}} </span></p>
+        <p>Last Location <span> {{characterDetails?.location?.name}} </span></p>
+    </div>
+</div>

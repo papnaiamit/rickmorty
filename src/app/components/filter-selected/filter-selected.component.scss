@@ -1,0 +1,23 @@
+.title {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.filter-tags {
+    margin-top: 15px;
+    span{
+        display: inline-block;
+        padding: 5px 8px;
+        color: #fff;
+        font-size: 12px;
+        background: #27becc;
+        margin-right: 10px;
+        border-radius: 3px;
+        em {
+            font-style: normal;
+            margin-left:2px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    }
+}

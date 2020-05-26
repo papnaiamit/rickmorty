@@ -1,0 +1,17 @@
+.grid-wrap {
+    background: #222;
+    padding: 10px 0 10px 10px ;
+}
+
+.no-result-found {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+@media (max-width:767px) {
+    .grid-wrap {
+        padding: 10px;
+    }
+}
+
