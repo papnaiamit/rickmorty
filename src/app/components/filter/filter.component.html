@@ -1,26 +1,25 @@
 <h2 class="title">Filter</h2>
 <div class="filter-box">
     <h3>Species</h3>
-
-    <label *ngFor="let filter of allFilters.species; let i = index" (change)="filterCharacter(species)">
-        <input type="checkbox" value="Human" [checked]="false" [(ngModel)]="species"> 
-        {{filter}}
+    <label *ngFor="let item of allFilters.species; let i = index">
+        <input type="checkbox" [value]="item" [checked]="item.checked" (change)="updateFilter($event, item)"> 
+        {{item?.value}}
     </label>
 </div>
 
 <div class="filter-box">
     <h3>Gender</h3>
-    <label *ngFor="let filter of allFilters.gender; let i = index" (change)="filterCharacter(gender)">
-        <input type="checkbox" value="Human" #gender> 
-        {{filter}}
+    <label *ngFor="let item of allFilters.gender; let i = index">
+        <input type="checkbox" [value]="item" [checked]="item.checked" (change)="updateFilter($event, item)"> 
+        {{item?.value}}
     </label>  
 </div>
 
 <div class="filter-box">
     <h3>Origin</h3>
-    <label *ngFor="let filter of allFilters.origin; let i = index" (change)="filterCharacter(origin)">
-        <input type="checkbox" value="Human" #origin> 
-        {{filter}}
+    <label *ngFor="let item of allFilters.origin; let i = index">
+        <input type="checkbox" [value]="item" [checked]="item.checked" (change)="updateFilter($event, item)"> 
+        {{item?.value}}
     </label>
 </div>
 

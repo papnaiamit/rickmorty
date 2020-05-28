@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CommonService} from '../../services/common.service';
+
 
 @Component({
   selector: 'app-filter',
@@ -6,30 +8,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-  public species;
+  public filterArr: Array<string> = [];
   public allFilters = {
     species: [
-      'Human',
-      'Mythology',
-      'Other Species'
+      {value: 'Human', checked: false, type: 'species'},
+      {value: 'Mythology', checked: false, type: 'species'},
+      {value: 'Other Species', checked: false, type: 'species'}
     ],
     gender: [
-      'Male',
-      'Female'
+      {value: 'Male', checked: false, type: 'gender'},
+      {value: 'Female', checked: false, type: 'gender'}
     ],
     origin: [
-        'Unknown',
-        'Post Apocalytic',
-        'Nuptia 4',
-        'Other origin'
+      {value: 'Unknown', checked: false, type: 'gender'},
+      {value: 'Post Apocalytic', checked: false, type: 'gender'},
+      {value: 'Nuptia 4', checked: false, type: 'gender'},
+      {value: 'Other origin', checked: false, type: 'gender'}
     ]
   };
-  constructor() { }
+  constructor(private service: CommonService) { }
   ngOnInit(): void {
+    this.service.currentFilter.pipe().subscribe((value) => {
+      this.filterArr = value;
+    });
   }
 
-  public filterCharacter(event) {
-    console.log(event);
+  /**
+   * @description this function is responsible of updating selected filter
+   * @param event:any
+   */
+  public updateFilter(event, item) {
+    if (event.target.checked) {
+      item.checked = event.target.checked;
+      this.filterArr.push(item);
+    }
+    else {
+      const index = this.filterArr.indexOf(event.target.value);
+      this.filterArr.splice(index, 1);
+    }
+    this.service.filterCategory(this.filterArr);
   }
-
 }
